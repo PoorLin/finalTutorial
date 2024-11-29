@@ -1,0 +1,23 @@
+<div>
+  <div class="grid mt-6">
+    <div class="col-6 col-offset-3">
+      <div class="flex flex-wrap gap-3 mb-4">
+        <div class="flex-auto">
+          <label for="integer" class="block mb-2"> 姓名 </label>
+          <input pInputText id="integer" pKeyFilter="int" class="w-full" [value]="profileData.name"/>
+        </div>
+        <div class="flex-auto">
+          <label for="number" class="block mb-2"> 信箱 </label>
+          <input pInputText id="number" pKeyFilter="num" class="w-full" [value]="profileData.name"/>
+        </div>
+<!--        <div class="flex-auto">-->
+<!--          <label  class="block mb-2"> 生日 </label>-->
+<!--          <p-calendar [(ngModel)]="date" />-->
+<!--        </div>-->
+        <p>
+          {{ profileData.birthday | date :'fullDate' }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div>
+  <div class="grid mt-6">
+    <div class="col-6 col-offset-3">
+      <div class="p-3 border-round-sm">
+        <p-card >
+
+
+          <h2 class="text-center">Register</h2>
+          <p-divider />
+
+            <div class="field">
+              <label for="name">name</label>
+              <input type="text" (input)="nameChange($event)" id="name" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full " (blur)="onValideName($event)">
+              @if (!nameValid){
+                <small class="text-red-500">
+                  請輸入姓名
+                </small>
+              }
+            </div>
+            <div class="field">
+              <label for="email">email</label>
+              <input type="email" (input)="emailChange($event)" id="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" (blur)="onValideMail($event)">
+              @if (!emailValid){
+                <small class="text-red-500">
+                  請輸入正確的信箱格式
+                </small>
+              }
+            </div>
+
+            <div class="field">
+              <label >password</label>
+              <input type="password" (input)="passwordChange($event)" id="password"  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full " (blur)="onValidePassword($event)">
+              @if (!passwordValid){
+                <small class="text-red-500">
+                  請輸入密碼
+                </small>
+              }
+
+
+            </div>
+
+
+            <div class="field">
+              <label  class="block mb-2"> 生日 </label>
+              <div class="w-full">
+                <p-calendar class="w-full" [(ngModel)]="birthday" />
+              </div>
+
+            </div>
+            <div class="grid">
+              <div class="col-6 col-offset-3">
+                <div class="text-center p-3 border-round-sm font-bold">
+                  <p-button label="註冊" (click)="register()" />
+
+                </div>
+              </div>
+            </div>
+
+
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
